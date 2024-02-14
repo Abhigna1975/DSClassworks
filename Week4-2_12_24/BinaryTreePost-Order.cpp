@@ -1,11 +1,13 @@
 #include <iostream>
 using namespace std;
 
+// Define the structure for a binary tree node
 struct Node {
     int data;
     struct Node* left, * right;
 };
 
+// Function to create a new node with given data
 Node* newNode(int data) {
     Node* temp = new Node;
     temp->data = data;
@@ -15,14 +17,22 @@ Node* newNode(int data) {
 
 // Function to print binary tree recursively in postorder
 void printTreePostorder(Node* root) {
+    // Base case: if the current node is NULL, return
     if (root == NULL)
         return;
-    printTreePostorder(root->left); // Traverse left subtree
-    printTreePostorder(root->right); // Traverse right subtree
-    cout << root->data << " "; // Visit the current node
+
+    // Traverse the left subtree
+    printTreePostorder(root->left);
+
+    // Traverse the right subtree
+    printTreePostorder(root->right);
+
+    // Visit the current node
+    cout << root->data << " ";
 }
 
 int main() {
+    // Create a sample binary tree
     Node* root = newNode(1);
     root->left = newNode(2);
     root->right = newNode(3);
@@ -33,9 +43,9 @@ int main() {
     root->right->right = newNode(7);
     root->right->right->left = newNode(15);
 
+    // Display the binary tree using postorder traversal
     cout << "Binary Tree (Postorder traversal):" << endl;
     printTreePostorder(root);
 
     return 0;
 }
- 
