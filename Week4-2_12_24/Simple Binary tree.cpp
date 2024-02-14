@@ -1,15 +1,15 @@
-//Simple Binary tree:
-        1
-       / \
-      2   3
-     / \
-    4   5
-
+// Simple Binary tree:
+//        1
+//       / \
+//      2   3
+//     / \
+//    4   5
 
 #include <iostream>
 #include <queue> // Necessary for using the queue data structure
 using namespace std;
 
+// Define the structure for a binary tree node
 struct Node {
     int data; // Holds the value of the node
     struct Node* left, *right; // Pointers to the left and right child of the node
@@ -51,19 +51,5 @@ int main() {
     return 0;
 }
 
-        1
-       / \
-      2   3
-     / \
-    4   5
-
-
-
-//Then, it uses a queue to perform a level order traversal (also known as breadth-first traversal) of the tree. In level order traversal, nodes are visited level by level from left to right. The program does this by:
-
-//Starting with the root node, it is added to the queue.
-//While the queue is not empty, the node at the front of the queue is accessed, its value is printed, and then it is removed from the queue.
-//If the current node has a left child, that child is added to the queue. Similarly, if the current node has a right child, that child is also added to the queue.
-//This process repeats until the queue is empty, ensuring that all nodes are visited in level order.
-//The output of this program is the values of the nodes in level order traversal: "1 2 3 4 5".
-//Footer
+// Output:
+// Level Order traversal of binary tree is  1 2 3 4 5
